@@ -1,0 +1,122 @@
+#canvas {
+    z-index 	: -9999;
+    position 	: absolute;
+    top 		: 0;
+    left    	: 0;
+    width   	: 100%;
+    height  	: 30%;
+    margin  	: 0;
+    padding 	: 0;
+    overflow 	: hidden;
+    overflow-x 	: hidden;
+    overflow-y 	: hidden;
+}
+
+#custBody{
+	background-color: #000000;
+	margin: 0px;
+	overflow: hidden;
+}
+
+#threejs{
+	/*z-index : -9999;*/
+	position: absolute;
+    top : 0;
+    left    : 0;
+    width   : 100%;
+    height  : 100%;
+    margin  : 0;
+    padding : 0;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;	
+}
+
+/*side nav bar adjusting*/
+#nav{
+    padding-left: 15px;
+    padding-right: 0px;
+    z-index: 9999;
+}
+
+.side-nav{
+    position: fixed;
+    top: 31%;
+    right: 4%;
+    opacity:0.8;
+}
+
+.parallax-container {
+	height: 400px;
+}
+
+.custom_div_shadow {
+    box-shadow: 7px 7px 3px black;
+}
+
+.foot{
+    margin:0px;
+    padding:15px;
+}
+
+.med-text{
+    font-size:20px;
+}
+
+.no-corner{
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+#pers,#reas,#lang,#proj,#nav{
+    box-shadow: 0 0 1px black;
+    -webkit-transition: box-shadow linear 0.2s;
+    -moz-transition   : box-shadow linear 0.2s;
+    -o-transition     : box-shadow linear 0.2s;
+    -ms-transition    : box-shadow linear 0.2s;
+    transition        : box-shadow linear 0.2s; 
+}
+
+#pers:hover,#reas:hover,#lang:hover,#proj:hover,#nav:hover{
+    box-shadow: 0 6px 25px black;
+}
+
+#b1,#b2{
+    opacity: 0.7;
+    -webkit-transition: opacity linear 0.2s;
+    -moz-transition   : opacity linear 0.2s;
+    -o-transition     : opacity linear 0.2s;
+    -ms-transition    : opacity linear 0.2s;
+    transition        : opacity linear 0.2s;   
+}
+
+#b1:hover,#b2:hover{
+    opacity: 1.0;
+}
+
+/*scroll fire element*/
+#transparent{
+    opacity: 0.0;
+}
+
+.margin10{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+hr.rule{
+    background-color : #1aa3ff;
+    width   : 10%;
+    height  : 2px;
+    border  : 0 none;
+}
+
+hr.full{
+    background-color : #1aa3ff;
+    height  : 2px;
+    border  : 0 none;
+}
+
+li.font-size{
+    font-size: 16px;
+}

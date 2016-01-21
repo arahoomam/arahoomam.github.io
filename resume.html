@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Resume</title>
+
+	<!-- scripts -->
+	<script src="js/jquery-2.1.3.js" ></script>
+	<script src="js/3D/transit.min.js"></script>
+	<script src="js/materialize.min.js" async></script>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<style>
+		object{
+			position: absolute;
+		    top 	: 0;
+		    left    : 0;
+		    width   : 100%;
+		    height  : 100%;
+		    margin  : 0;
+		    padding : 0;
+		    overflow: hidden;
+		    overflow-x: hidden;
+		    overflow-y: hidden;
+		}
+		
+		#home{
+		    position: fixed;
+		    top: 5%;
+		    left: 5%;
+		}
+
+	</style>
+</head>
+
+<body style="white">
+	<a id="home" class="btn-floating btn-large waves-effect waves-light teal tooltipped" href="index.html" data-position="bottom" data-delay="50" data-tooltip="Back to main page">
+		<i class="material-icons">home</i>
+	</a>
+
+	<div id="resume" class="container "style="opacity:0;">
+		<object data="assets/resume.pdf" type=""></object>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function(){
+		$("#resume").transit({ opacity: 1}, 1000, 'ease-in');
+	});
+</script>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mamoru O'Hara</title>
+
+	<!-- Javascript -->
+	<script src="js/jquery-2.1.3.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/myscripts.js" async></script>
+	<script src="js/TweenMax.min.js" async></script>
+	<script src="js/ScrollToPlugin.min.js" async></script>
+	<script src="https://code.createjs.com/tweenjs-0.6.2.min.js" async></script>
+
+	<!-- Animation scripts -->
+	<script src="js/3D/three.min.js" async></script>
+	<script src="js/3D/transit.min.js" async></script>
+	<script src="js/3D/top.js" async></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
+
+</head>
+
+<body class="blue lighten-1" onload="startup();">
+	<!-- ========================================================================================================== -->
+	<!-- Side nav bar -->
+	<div class="row">
+		<div id="nav" class="col s11 m11 l1 white z-depth-3 no-corner side-nav">	
+			<ul class="row section table-of-contents">
+		        <li class="font-size col s3 m3 l12"><a id="n-p" href="#Personal" class="black-text">About Me</a></li>
+		        <li class="font-size med-text col s3 m3 l12"><a id="n-r" href="#Research" class="black-text">Research</a></li>
+		        <li class="font-size med-text col s3 m3 l12"><a id="n-l" href="#Languages" class="black-text">Languages</a></li>
+		        <li class="font-size med-text col s3 m3 l12"><a id="n-pr"href="#Projects" class="black-text">Projects</a></li>
+	     	</ul>
+		</div>		
+	</div>
+
+	<!-- ========================================================================================================== -->
+	<!-- Threejs display -->
+	<div id="canvas"></div>
+
+	<!-- ========================================================================================================== -->
+	<!-- Buttons -->
+	<div style="margin:100px">
+		<div class="container">
+			<div class="row">
+				<a onclick="changePage()" id="b1" class="col s2 btn-large waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Click to link to my resume!">
+					<i class="material-icons right large">assignment_ind</i>
+					Resume
+				</a>
+		
+				<a id="b2" class=" col s2 offset-s1 btn-large waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Under construction :/">
+					<i class="material-icons right large">play_circle_outline</i>
+					Interactive
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ========================================================================================================== -->
+	<!-- Personal info -->
+	<div id="Personal"class="section grey lighten-2 custom_div_shadow scrollspy ">
+		<div id="pers"class="container row grey darken-3 offset-s2 no-corner margin10 valign-wrapper">
+			<div class="col s3">
+				<img src="assets/pictures/profile2.jpg" alt="" class="valign no-corner z-depth-1 responsive-img">
+			</div>
+
+			<div class="col s9 white no-corner margin10">
+				<h3>Mamoru O'Hara</h3>
+				<hr class="full">
+				<p style="font-size:18px;">
+					My name is Mamoru O'Hara, Mamo for short, currently earning a Bachelor in Computer Science with a Minor in Astronomy at the University of Illinois Urbana Champaign.
+				</p>
+				<p style="font-size:18px;">
+					I have always loved expressing my more creative side which allowed me to find an interest in alot of front end web development work (like this site!). Recently, I have ignited a passion in everything graphics related, and more specifically, data visualization. I have also been mainly involved in group projects related to HCI (human computer interaction), which I talk about in more detail below.   
+				</p>
+				<p style="font-size:18px;">
+					If you want to know more about the pictures below, click on them! (It may not work on browswer versions IE 9 or less, as well as safari.) If you would like to see my resume, click the button above. I am also currently working on an interactive 3D verson of this site so stay tuned!
+				</p>
+				<hr class="rule">
+				<p style="font-size:18px;">
+					It is recommended that this site is viewed with the latest version of Chrome. 
+				</p>
+			</div>
+		</div>		
+	</div>
+	
+	<!-- ========================================================================================================== -->
+	<!-- parallax -->
+	<div id="1pic" class="parallax-container" onclick="photoDesc(this.id)">
+		<div class="parallax">
+			<img src="assets/pictures/ojai.jpg" class="tooltipped" data-position="left" data-delay="50" data-tooltip="Click to link to my resume!">
+		</div>
+	</div>
+	
+	<!-- ========================================================================================================== -->
+	<!-- research/jobs -->
+	<div id="Research"class="section grey lighten-2 custom_div_shadow scrollspy ">
+		<div id="reas" class="container row grey darken-3 offset-s2 no-corner margin10">
+			<div class="col s12 white no-corner margin10">
+				<h3>Research</h3>
+				<hr class="full">
+
+				<p style="font-size:20px; font-weight: 600;">UIUC PURE: Mining Potential Relations from Biomedical Data</p>
+
+				<p style="font-size:18px;">Overall research problem is to build an open entity relation centric extraction and ranking system in the form of a web-scalable search engine platform within the medical domain (focusing on chemicals and diseases) by mining millions of paper abstracts for relations</p>
+
+				<p style="font-size:18px;" >My work focused on creating a relation evaluation model by ranking a relation phrase with an entity pair, essentially being able to accurately predict what the user would most likely want to see</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- ========================================================================================================== -->
+	<!-- parallax -->
+	<div id="2pic" class="parallax-container" onclick="photoDesc(this.id)">
+		<div class="parallax">
+			<img src="assets/pictures/ski.jpg" alt="">
+		</div>
+	</div>
+	
+	<!-- ========================================================================================================== -->
+	<!-- Languages -->
+	<div id="Languages" class="section grey lighten-2 custom_div_shadow scrollspy">
+		<div id="lang" class="container row grey darken-3 offset-s2 no-corner margin10">
+			<div class="col s12 white no-corner margin10">
+				<h3>Languages</h3>
+				<hr class="full">
+					<ul id="staggered-lang">
+						<blockquote style="border-left:5px solid #9ADFEF;">
+							<li id="transparent"><h4>C/C++</h4></li>
+						</blockquote>
+						
+						<blockquote style="border-left:5px solid #9ADFEF;">
+							<li id="transparent"><h4>Python</h4></li>
+						</blockquote>
+
+						<blockquote style="border-left:5px solid #9ADFEF;">
+							<li id="transparent"><h4>Java</h4></li>
+						</blockquote>
+
+						<blockquote style="border-left:5px solid #9ADFEF;">
+							<li id="transparent"><h4>HTML\CSS\Javascript</h4></li>
+						</blockquote>
+					</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ========================================================================================================== -->
+	<!-- parallax -->
+	<div id="3pic" class="parallax-container" onclick="photoDesc(this.id)">
+		<div class="parallax">
+			<img src="assets/pictures/sunset.jpg" alt="">
+		</div>
+	</div>
+	
+	<!-- ========================================================================================================== -->
+	<!-- Side Projects -->
+	<div id="Projects" class="section grey lighten-2 custom_div_shadow scrollspy">
+		<div id="proj" class="container row grey darken-3 offset-s2 no-corner margin10">
+			<div class="col s12 white no-corner margin10">
+				<h3>Side Projects</h3>
+				<hr class="full">
+
+				<ul id="staggered-lang1">
+					<blockquote style="border-left:5px solid #9ADFEF;">
+						<li id="transparent">
+							<h4>What's On</h4>
+							<p style="font-size:18px;">
+								A Chrome plugin that brings in data from Netflix, Hulu, Amazon Video, as well as local television for a one stop show time checker.
+							</p>
+						</li>
+					</blockquote>
+
+					<blockquote style="border-left:5px solid #9ADFEF;">
+						<li id="transparent">
+							<h4>BrainBeats</h4>
+							<p style="font-size:18px;">
+								Contributed to a music player that plays music based off of the users emotion using an emotiv headset. Won third place for the "Future Starts Here category" at UIUC Engineering Open House Spring 2015.
+							</p>
+						</li>
+					</blockquote>
+	
+					<blockquote style="border-left:5px solid #9ADFEF;">
+						<li id="transparent">
+							<h4>Brain vs Brawn</h4>
+							<p style="font-size:18px;">
+								Uses an EMG to read in muscle movements and an EEG headset to monitor brain activity to pit two players against eachother in a game of pong. 
+							</p>
+						</li>
+					</blockquote>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ========================================================================================================== -->
+	<!-- footer -->
+	<footer class="page-footer light-blue accent-2 foot">
+		<div class="container">
+			<h5>This page was created thanks to:</h5>
+			<blockquote style="border-left:5px solid #9ADFEF;">
+				<ul>
+	              <li><a id="f-md" class="white-text med-text" href="https://www.google.com/design/spec/material-design/introduction.html">Material Design</a></li>
+	              <li><a id="f-th" class="white-text med-text" href="http://threejs.org/">Threejs</a></li>
+	              <li><a id="f-tw" class="white-text med-text" href="http://www.createjs.com/tweenjs">Tweenjs</a></li>
+	              <li><a id="f-tr" class="white-text med-text" href="http://ricostacruz.com/jquery.transit/">Transit</a></li>
+	            </ul>
+			</blockquote>
+		</div>
+	</footer>
+
+</body>
+</html>
